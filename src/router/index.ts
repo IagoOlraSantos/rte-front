@@ -21,8 +21,9 @@ export async function bootRouter(): Promise<Router> {
       console.log('Usuário logado!')
     })
     .catch((e) => {
-      useTokenStorage().removeToken();
-      useUserStorage().removeUser();
+      useTokenStorage().removeToken()
+      useUserStorage().removeUser()
+      if (window.location.pathname === '/') return;
       window.location.replace('/')
       console.error('Faça login novamente para continuar!', e)
     })
