@@ -14,7 +14,7 @@ withDefaults(defineProps<Props>(), {
 
 const appMemory = useStorage();
 const timer = ref(0)
-const interval = ref(0)
+const interval = ref<any>(0)
 const emits = defineEmits(['start-timer','stop-timer'])
 const visible = computed(() => {
   return timer.value > 0

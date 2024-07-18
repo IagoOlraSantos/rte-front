@@ -1,10 +1,11 @@
 import type { IconName } from '@fortawesome/fontawesome-common-types'
+import type { IRoute } from '@/router/provider/app-routes'
 
 type MenuItem = {
   title?: string
   label: string
   icon: IconName
-  route: object
+  route: IRoute
   badge?: number
 }
 

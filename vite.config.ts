@@ -1,13 +1,11 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
+import { defineConfig, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
-export default (args: any) => {
-  console.log('args', args)
-
+export default ():UserConfig => {
   return defineConfig({
     plugins: [vue(), vueDevTools()],
     resolve: {
