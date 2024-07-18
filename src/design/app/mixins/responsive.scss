@@ -1,0 +1,20 @@
+// Define os breakpoints
+$breakpoints: (
+        'mobile': 479px,
+        'mobile-landscape': 767px,
+        'tablet': 991px,
+        'laptop': 1200px,
+        'desktop': 1200px,
+        'wide': 1920px
+);
+
+// Mixin para responsividade
+@mixin responsive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' não encontrado nos breakpoints definidos.";
+  }
+}

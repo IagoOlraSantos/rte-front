@@ -1,0 +1,77 @@
+/* semantic color variables for this project */
+:root {
+  --color-bg: var(--rte-surface);
+  --color-bg-soft: var(--rte-white-soft);
+  --color-bg-mute: var(--rte-white-mute);
+
+  // Text
+  --color-heading: var(--rte-text-light-1);
+  --color-text: var(--rte-text-light-1);
+  --color-app-name: var(--rte-white);
+
+  // Sidebar
+  --color-bg-sidebar: var(--rte-blue-dark);
+  --color-border-sidebar-toggle-icon: var(--rte-foggy-gray);
+  --color-bg-sidebar-toggle-icon: var(--rte-white);
+  --color-toggle-icon: var(--rte-electric-blue);
+
+  // Overlay
+  --color-bg-overlay: var(--rte-translucent-black);
+
+  // Scrollbar
+  --color-scroll-bar: var(--rte-foggy-gray);
+
+  // Input
+  --color-bg-input: var(--rte-white);
+  --color-border-input: var(--ice-gray);
+
+  // Header
+  --color-bg-menu-icon: var(--rte-white);
+
+  // Breadcrumb
+  --color-breadcrumb-item: var(--rte-medium-gray);
+
+  // Modal
+  --color-bg-modal: var(--rte-surface);
+
+  // Divider
+  --color-bg-divider: var(--rte-outline-variant);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--rte-black);
+    --color-bg-soft: var(--rte-black-soft);
+    --color-bg-mute: var(--rte-black-mute);
+
+    // Text
+    --color-heading: var(--rte-text-dark-1);
+    --color-text: var(--rte-text-dark-2);
+    --color-app-name: var(--rte-white);
+
+    // Sidebar
+    --color-bg-sidebar: var(--rte-blue-light);
+
+    // Overlay
+    --color-bg-overlay: var(--rte-translucent-black-1);
+
+    // Input
+    --color-bg-input: var(--rte-surface-container);
+    --color-border-input: var(--rte-surface-container-highest);
+
+    // Header
+    --color-bg-menu-icon: var(--rte-surface-container-low);
+
+    // Scrollbar
+    --color-scroll-bar: var(--rte-surface-container-highest);
+
+    // Breadcrumb
+    --color-breadcrumb-item: var(--rte-medium-gray);
+
+    // Modal
+    --color-bg-modal: var(--rte-surface-container);
+
+    // Divider
+    --color-bg-divider: var(--rte-outline);
+  }
+}
