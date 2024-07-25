@@ -7,7 +7,14 @@ import { RouterView } from 'vue-router'
     <div class="auth-layout__left">
       <div class="auth-layout__left-header">
         <img src="/src/assets/img/logo-iph-hori.svg" alt="" />
-        <div><span>Quer saber mais sobre o IPH?</span> <a href="#">Clique aqui</a></div>
+        <div class="auth-layout__left-header__know-more">
+          <span class="desktop">Quer saber mais sobre o IPH?</span>
+          <a class="desktop" href="#">Clique aqui</a>
+        </div>
+
+        <div class="auth-layout__left-header__know-more--mobile">
+          <a href="#" class="mobile">Saiba mais IPH</a>
+        </div>
       </div>
 
       <div class="auth-layout__left-content">
@@ -52,6 +59,49 @@ import { RouterView } from 'vue-router'
       align-items: center;
       justify-content: center;
       flex: 1;
+    }
+
+    &-header {
+      &__know-more {
+        @include responsive('mobile-landscape') {
+          display: none;
+        }
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 8px;
+
+        a {
+          color: var(--rte-primary-color);
+        }
+
+        &--mobile {
+          @include responsive('mobile-landscape') {
+            display: block;
+          }
+
+          display: none;
+
+          a {
+            color: var(--rte-primary-color);
+          }
+        }
+      }
+
+      img {
+        @include responsive('mobile') {
+          width: 100px;
+        }
+      }
+    }
+
+    &-footer {
+      img {
+        @include responsive('mobile') {
+          width: 130px;
+        }
+      }
     }
   }
 

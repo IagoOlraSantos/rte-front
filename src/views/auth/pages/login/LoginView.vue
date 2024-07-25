@@ -63,7 +63,7 @@ const onSubmit = handleSubmit(async (form) => {
   <form class="form-login" @submit="onSubmit">
     <AppLoginTitle />
 
-    <AppSeparator text="Código" />
+    <AppSeparator text="Faça login" />
 
     <div class="form-login__input">
       <label for="email">E-mail</label>

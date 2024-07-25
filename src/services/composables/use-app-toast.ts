@@ -18,6 +18,7 @@ export function useAppToast() {
       })
     },
     error: ({ title, message }: PayloadToast) => {
+      console.log(title, message)
       toast.add({
         severity: 'error',
         summary: title,

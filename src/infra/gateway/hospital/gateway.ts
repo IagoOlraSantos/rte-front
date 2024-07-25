@@ -9,7 +9,7 @@ export default class HospitalGatewayHttp implements HospitalGateway {
     return this.http
       .get('/hospitals')
       .then((response: any) => {
-        return response.data.hospitals.map((hospital: any) => new Hospital(hospital))
+        return response.data.map((hospital: any) => new Hospital(hospital))
       })
   }
 

@@ -13,7 +13,7 @@ const { breadcrumbs } = useBreadcrumb();
     <ul class="app-breadcrumb" type="ol">
       <template v-for="(crumb, index) in breadcrumbs" :key="index">
         <AppBreadcrumbItem
-          v-if="crumb.path"
+          v-if="crumb.path && crumb.breadcrumb.length"
           :path="crumb.path"
           :breadcrumb="crumb.breadcrumb"
           :disabled="index < breadcrumbs.length - 1"

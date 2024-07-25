@@ -7,7 +7,11 @@
 
 <style lang="scss">
 .login-title {
-  font-size: 36px;
+  @include responsive('mobile') {
+    font-size: var(--size-24);
+  }
+
+  font-size: var(--size-36);
   font-weight: 600;
   text-align: center;
   line-height: 1.4;

@@ -13,9 +13,9 @@ import { transfusionAgencyRoute } from '../views/transfusion-agency/routes'
 import { triagemRoute } from '../views/triagem/routes'
 import { checkIsAuthenticated } from '@/router/guards'
 
-export async function bootRouter(): Promise<Router> {
+export function bootRouter(): Router {
   const account = accountGateway()
-  await account
+  account
     .ping()
     .then(() => {
       console.log('Usuário logado!')

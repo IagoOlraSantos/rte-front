@@ -17,7 +17,7 @@ defineProps<AppBreadcrumbItemProps>()
   <li class="app-breadcrumb-item">
     <AppLink v-if="disabled" :to="path" > {{ breadcrumb }}</AppLink>
     <span v-else>{{ breadcrumb }}</span>
-    <span class="app-breadcrumb-item--separator" >/</span>
+    <span v-if="breadcrumb.length" class="app-breadcrumb-item--separator" >/</span>
   </li>
 </template>
 

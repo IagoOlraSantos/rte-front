@@ -3,7 +3,7 @@ import { getAuthParamsFromUrl } from '@/router/guards/GetAuthParamsFromUrl'
 
 import { chatRoute } from '../pages/chat/route'
 import { dashboardRoute } from '../pages/dashboard/route'
-import { patientListRoute } from '../pages/patients/list/route'
+import { patientsRoute } from '../pages/patients/route'
 import { profileRoute } from '../pages/profile/route'
 import { rtsListRoute } from '../pages/rts/list/route'
 import { rtsListFinishedRoute } from '../pages/rts/list-finished/route'
@@ -25,7 +25,7 @@ export const medicRoute: RouteRecordRaw = {
   children: [
     chatRoute,
     dashboardRoute,
-    patientListRoute,
+    patientsRoute,
     profileRoute,
     rtsListRoute,
     rtsListFinishedRoute,

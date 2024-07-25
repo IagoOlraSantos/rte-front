@@ -3,7 +3,10 @@
     <div class="auth-layout__left">
       <div class="auth-layout__left-header">
         <img src="/src/assets/img/logo-iph-hori.svg" alt="" />
-        <div><span>Quer saber mais sobre o IPH?</span> <a href="#">Clique aqui</a></div>
+        <div class="auth-layout__left-header__know-more">
+          <span>Quer saber mais sobre o IPH?</span>
+          <a href="#" >Clique aqui</a>
+        </div>
       </div>
 
       <div class="auth-layout__left-content">
@@ -48,6 +51,18 @@
       align-items: center;
       justify-content: center;
       flex: 1;
+    }
+
+    &-header {
+      &__know-more {
+        span {
+          background-color: red;
+        }
+
+        a {
+          background-color: blue;
+        }
+      }
     }
   }
 

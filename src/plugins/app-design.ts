@@ -3,6 +3,7 @@ import PrimeVue from 'primevue/config'
 import Aura from '@primevue/themes/aura'
 import { definePreset } from '@primevue/themes'
 import ToastService from 'primevue/toastservice'
+import Toast from 'primevue/toast';
 import ConfirmationService from 'primevue/confirmationservice'
 
 const AppDesignPlugin: ObjectPlugin = {
@@ -38,6 +39,7 @@ const AppDesignPlugin: ObjectPlugin = {
 
     // Toast
     app.use(ToastService)
+    app.component('AppToast', Toast)
 
     // Modal
     app.use(ConfirmationService)
