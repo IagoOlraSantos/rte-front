@@ -14,7 +14,7 @@ defineOptions({
 <style scoped lang="scss">
 .app-container {
   @include responsive('mobile') {
-    padding: 0 var(--size-24) var(--size-24) var(--size-24);
+    padding: 0 var(--size-16) var(--size-16) var(--size-16);
   }
 
   display: flex;

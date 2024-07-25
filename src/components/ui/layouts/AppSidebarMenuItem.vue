@@ -12,6 +12,8 @@ defineOptions({
   name: 'AppSidebarMenuItem'
 })
 
+const emit = defineEmits(['close-sidebar'])
+
 const currentRouter = useRoute()
 const props = withDefaults(defineProps<AppSidebarMenuItemProps>(), {
   active: false
@@ -27,10 +29,14 @@ const classes = computed(() => {
     'app-sidebar-menu-item--active': isActive.value
   }
 })
+
+const onChangeRoute = () => {
+  emit('close-sidebar')
+}
 </script>
 
 <template>
-  <router-link v-if="route" :to="route">
+  <router-link v-if="route" :to="route" @click="onChangeRoute">
     <li :class="classes">
       <slot></slot>
     </li>

@@ -21,7 +21,7 @@ import InputSearch from '../form/InputSearch.vue'
   }
 
   @include responsive('mobile') {
-    padding: var(--size-24);
+    padding: var(--size-16);
   }
 
   width: 100%;

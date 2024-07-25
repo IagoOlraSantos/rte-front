@@ -25,6 +25,12 @@ const classes = computed(() => {
 })
 
 const emit = defineEmits(['toggle'])
+
+const onCloseSidebar = () => {
+  if(window.innerWidth < 991) {
+    emit('toggle', false)
+  }
+}
 </script>
 
 <template>
@@ -32,8 +38,8 @@ const emit = defineEmits(['toggle'])
     <AppChevronLeftButton class="app-sidebar__btn" @click="emit('toggle')" />
     <nav class="app-sidebar__nav">
       <AppSidebarHeader @toggle="emit('toggle')"/>
-      <AppSidebarContent />
-      <AppSidebarFooter />
+      <AppSidebarContent @close-sidebar="onCloseSidebar" />
+      <AppSidebarFooter @close-sidebar="onCloseSidebar"/>
     </nav>
   </aside>
 

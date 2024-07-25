@@ -8,14 +8,20 @@ defineOptions({
   name: 'AppSidebarFooter'
 })
 
+
+const emit = defineEmits(['close-sidebar'])
 const app = useGlobalState();
+
+const onChangeRoute = () => {
+  emit('close-sidebar')
+}
 </script>
 
 <template>
   <AppSidebarMenuListItem class="app-sidebar-footer">
     <template v-for="(menu, index) in app.appMenu.footer" :key="index">
       <AppSidebarSectionTitle v-if="menu.title">{{ menu.title }}</AppSidebarSectionTitle>
-      <AppSidebarMenuItem :route="menu.route">
+      <AppSidebarMenuItem :route="menu.route" @close-sidebar="onChangeRoute">
         <AppSidebarMenu :icon="menu.icon" :label="menu.label" :counter="menu.badge"  />
       </AppSidebarMenuItem>
     </template>

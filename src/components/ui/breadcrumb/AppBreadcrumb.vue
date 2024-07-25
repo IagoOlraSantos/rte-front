@@ -29,5 +29,9 @@ const { breadcrumbs } = useBreadcrumb();
   list-style: none;
   padding: 0;
   margin: 0;
+
+  @include responsive('mobile') {
+    display: none;
+  }
 }
 </style>
