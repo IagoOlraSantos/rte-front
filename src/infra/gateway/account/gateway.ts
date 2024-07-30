@@ -34,7 +34,7 @@ export default class AccountGatewayHttp implements AccountGateway {
 
   async verifyTwoFactorCode(code: string): Promise<void> {
     await this.http
-      .post('/verify-two-factor', {
+      .post('/check-two-factor', {
         code,
       })
   }

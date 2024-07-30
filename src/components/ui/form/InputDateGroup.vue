@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import InputDate from '@/components/ui/form/InputDate.vue'
+import InputFormGroup from './InputFormGroup.vue'
 
 type Props = {
   id?: string
@@ -22,8 +23,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="input-date-group">
-    <label :for="props.id">{{ props.label }}</label>
+  <InputFormGroup :label="props.label" :invalid="props.invalid" :aria="props.aria" :id="props.id">
     <InputDate
       :id="props.id"
       v-model="model"
@@ -32,23 +32,8 @@ const props = withDefaults(defineProps<Props>(), {
       :placeholder="props.placeholder"
       :invalid="props.invalid"
     />
-    <small v-show="props.invalid" :id="props.aria" class="input-date-group__error">
+    <template #error>
       <slot name="error"></slot>
-    </small>
-  </div>
+    </template>
+  </InputFormGroup>
 </template>
-
-<style lang="scss" scoped>
-.input-date-group {
-  display: flex;
-  flex-direction: column;
-
-  .p-inputtext {
-    width: 100%;
-  }
-
-  &__error {
-    color: var(--rte-red-400);
-  }
-}
-</style>

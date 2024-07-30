@@ -2,6 +2,22 @@
   display: flex;
 }
 
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.content-end {
+  justify-content: flex-end;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -99,5 +115,45 @@
 
   &-6 {
     border-radius: var(--size-14);
+  }
+}
+
+.gap {
+  &-1 {
+    gap: 4px;
+  }
+
+  &-2 {
+    gap: 8px;
+  }
+
+  &-3 {
+    gap: 12px;
+  }
+
+  &-4 {
+    gap: 16px;
+  }
+
+  &-5 {
+    gap: 20px;
+  }
+
+}
+
+.mb {
+  &-20 {
+    margin-bottom: var(--size-20);
+  }
+}
+
+.responsive {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--size-20);
+
+  @include responsive('mobile-landscape') {
+    flex-direction: column;
   }
 }

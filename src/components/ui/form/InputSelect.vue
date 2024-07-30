@@ -3,5 +3,5 @@ import Select from 'primevue/select'
 </script>
 
 <template>
-  <Select optionLabel="text" placeholder="Selecione..." empty-message="Sem opções"/>
+  <Select optionLabel="text" placeholder="Selecione..."/>
 </template>
