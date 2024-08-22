@@ -17,7 +17,7 @@ export default class HospitalGatewayHttp implements HospitalGateway {
     return this.http
       .get('/areas')
       .then((response: any) => {
-        return response.data.areas;
+        return response.data;
       })
   }
 }
