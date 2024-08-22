@@ -10,7 +10,7 @@ import AppLoginTitle from '@/components/ui/page/AppLoginTitle.vue'
 import AppSeparator from '@/components/ui/separator/AppSeparator.vue'
 import AppTimer from '@/components/ui/timer/AppTimer.vue'
 
-import { useAppRoutes, useAppToast } from '@/services/composables'
+import { useAppRoutes, useAppToast, useLoading } from '@/services/composables'
 import { useAccountGateway } from '@/services/gateway'
 
 const { errors, handleSubmit, defineField } = useForm({
@@ -29,9 +29,11 @@ const router = useRouter()
 const appRoutes = useAppRoutes()
 const accountGateway = useAccountGateway()
 const appToast = useAppToast()
+const { isLoading, startLoading, stopLoading } = useLoading();
 const [code] = defineField('code')
 
 const onSubmit = handleSubmit(async (form) => {
+  startLoading();
   try {
     await accountGateway
       .verifyTwoFactorCode(form.code)
@@ -41,6 +43,8 @@ const onSubmit = handleSubmit(async (form) => {
       title: 'Atenção',
       message: 'Código inválido ou expirado!'
     })
+  } finally {
+    stopLoading();
   }
 })
 
@@ -83,6 +87,6 @@ async function sendMail() {
       </small>
     </div>
 
-    <AppButton class="auth-view__btn-submit" type="submit" label="Enviar" raised />
+    <AppButton class="auth-view__btn-submit" type="submit" label="Enviar" raised :loading="isLoading" />
   </form>
 </template>
